@@ -3,18 +3,23 @@ Crack spread trading strategy algorithm based on GARCH volatility implemented in
 
 # Requirements
 - Python 3.6 or later
-- Interactive Brokers API access credentials for TWS or IB Gateway 
+- Interactive Brokers API access credentials for TWS or IB Gateway
 - IB live or paper trading account
 
-# Key Concepts and How To Use
-- Simple 3:2:1 crack spread trading strategy with long and or short futures positions
+# Key Concepts & How to Use
+- Simple 3:2:1 crack spread trading strategy algo with long and or short futures positions
 - Crack spreads, z-scores, and GARCH volatility with optimized p and q are automatically and periodically calculated from requested historical data
 - Manually input thresholds for z-score, low/high volatility, and adjusted volatility
+- Rollover costs are automatically calculated for when need to rollover open trading position
 - Open crack spread position (either) from trigger built on crack spreads, z-score, any open position and their length, returns, and GARCH volatility: comparison between last returned crack spread and GARCH volatility
 - Close crack spread position (either) from trigger built on crack spreads, z-score, any open position and their length, returns, GARCH volatility, and low/high volatility threshold: comparison between last returned crack spread and product of GARCH volatility and low/high volatility threshold
+- Leave crack spread position open from triggers in-addition to not meeting those of closing a crack spread position (either)--that is, whether there is enough historical or crack spread data at all
+- Track crack spread commodities futures contracts orders and place them correctly
+- Keep track of current position, paper cumulative, and cumulative profit and loss
 - Broad error handling and logging of unexpected events
 
 # Helpful Resources
+- [Checking Margin Changes](https://interactivebrokers.github.io/tws-api/margin.html)
 - [Forecasting energy market volatility using GARCH models: Can multivariate models beat univariate models?](https://www.sciencedirect.com/science/article/abs/pii/S0140988312000540)
 - [An empirical model comparison for valuing crack spread options](https://www.sciencedirect.com/science/article/abs/pii/S0140988315001917)
 
@@ -25,6 +30,7 @@ Crack spread trading strategy algorithm based on GARCH volatility implemented in
 - Deal with data in a more exhaustive manner by incorporating a validation set
 - Comprehensively test strategy using historical data as well as backtesting methods for the purpose of maximizing performance and risk
 - Housekeeping items can be additionally incorporated to keep track of trading strategy parameters such as ibapi EWrapper's managedAccounts
+- Incorporate margin handling with IBApi.Order.Whatif flag
 - Stay inform of external factors that the trading algo does not take into account for possibly manual intervention
 
 # Financial Disclaimer
