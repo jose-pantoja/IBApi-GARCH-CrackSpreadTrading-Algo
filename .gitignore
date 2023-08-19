@@ -1,0 +1,63 @@
+# Compiled Python files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Logs
+*.log
+
+# Virtual environment
+venv/
+env/
+
+# IDE-specific files
+.vscode/
+.idea/
+
+# Data files
+*.csv
+*.xlsx
+
+# Compiled libraries
+lib/
+libs/
+
+# Dependency management files
+pip-lock.txt
+requirements.txt
+
+# Temporary files
+*.swp
+*.swo
+*.tmp
+
+# Compiled executables
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore API credentials, secrets, and configuration files
+config.json
+credentials.json
+secrets.json
+
+# Ignore sensitive files related to financial data
+*.pem
+*.key
+*.crt
+*.cer
+*.p12
+*.pfx
+
+# Ignore private keys and other sensitive files
+*.pem
+*.key
+*.crt
+*.cer
+*.p12
+*.pfx
